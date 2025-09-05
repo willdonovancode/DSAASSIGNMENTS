@@ -6,22 +6,22 @@
 // IDE Name: IntelliJ
 import java.util.Scanner;
 public class Vowels {
-    int count=0;
     //counts the number of vowels in a string
     public int countVowels(String s,int i){
         //prevents out of bounds exceptions
         if (i==s.length()){
-            return count;
+            return 0;
         }
         s=s.toLowerCase();
         //cast string to lowercase
-        if(s.charAt(i)=='a' || s.charAt(i)=='e' || s.charAt(i)=='i' || s.charAt(i)=='o' || s.charAt(i)=='u'){
-            count++;
-            //increment count of vowels
-        }
+        int count = (s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o' || s.charAt(i) == 'u') ? 1 : 0;
+        //use ternary operator
+        //if condition is met count =1
+        //else count=0
+        //then adds count recursively! YAY
+
         //increments index since strings are similar to arrays
-        countVowels(s,i+1);
-        return count;
+        return count + countVowels(s,i+1);
     }
     public static void main(String[] args) {
         Vowels v=new Vowels();
