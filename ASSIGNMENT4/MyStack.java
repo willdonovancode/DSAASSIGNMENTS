@@ -2,6 +2,7 @@ package ASSIGNMENT4;
 
 public class MyStack<E>{
     private int size=0;
+    public Node stack;
     public MyStack(){
 
     }
