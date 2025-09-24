@@ -19,6 +19,9 @@ public class MyStack<E>{
                 temp=temp.next;
             }
 
+            temp.next = new Node(data);
+            size++;
+        }
     }
     public void pop(){
 
