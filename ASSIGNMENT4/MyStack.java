@@ -69,10 +69,10 @@ public class MyStack<E>{
     }
             private class Node
         {
-            private int data;  //data field
-            private MyStack next; //link field
+            private E data;  //data field
+            private Node next; //link field
 
-            public Node(int item) //constructor method
+            public Node(E item) //constructor method
             {
                 data = item;
                 next = null;
