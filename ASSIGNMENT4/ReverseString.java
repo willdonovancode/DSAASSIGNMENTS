@@ -1,5 +1,10 @@
 package ASSIGNMENT4;
-
+// Name: Will Donovan
+// Class: CS 3305/Section01
+// Term: Fall 2025
+// Instructor: Dr. Haddad
+// Assignment: 4
+// IDE Name: INTELLIJ
 import java.util.*;
 public class ReverseString {
     public static String reverseString(String s,MyStack stack){
@@ -37,8 +42,8 @@ public class ReverseString {
                     s=input.nextLine();
                     break;
                 case 2:
-                    System.out.println("String before being reversed: "+s);
-                    System.out.println("String after being reversed: "+reverseString(s,stack));
+                    System.out.println("Entered String: "+s);
+                    System.out.println("Reversed String: "+reverseString(s,stack));
                     break;
                 case 3:
                     System.out.println("Exiting program...");
