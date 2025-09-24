@@ -7,6 +7,17 @@ public class MyStack<E>{
 
     }
     public void push(E data){
+        if(size==0){
+            stack=new Node(data);
+            size++;
+            return;
+        }
+        else{
+            Node temp = stack;
+            while (temp.next != null)
+            {
+                temp=temp.next;
+            }
 
     }
     public void pop(){
