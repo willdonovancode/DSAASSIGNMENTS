@@ -23,7 +23,18 @@ public class MyStack<E>{
             size++;
         }
     }
-    public void pop(){
+    public E pop(){
+        if (size==0){
+            return null;
+        }
+        if (size==1){
+            size--;
+                Node temp=stack;
+                stack = null;
+                return temp.data;
+            }
+
+            Node curr = stack;
 
     }
             private class Node
