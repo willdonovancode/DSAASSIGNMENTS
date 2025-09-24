@@ -36,6 +36,36 @@ public class MyStack<E>{
 
             Node curr = stack;
 
+            while (curr.next.next != null) {
+                curr = curr.next;
+            }//go to second to last node
+            Node temp=curr.next;
+            curr.next=null;
+            size--;
+            return temp.data;
+        }
+
+    public E top(){
+        if (size==0){
+            return null;
+        }
+        else if(size==1){
+            return stack.data;
+        }
+        Node curr=stack;
+        while(curr.next!=null){
+            curr=curr.next;
+        }
+        return curr.data;
+    }
+    public int size(){
+        return size;
+    }
+    public boolean isEmpty(){
+        if(size==0){
+            return true;
+        }
+        return false;
     }
             private class Node
         {
