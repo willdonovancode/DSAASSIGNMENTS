@@ -31,7 +31,7 @@ public class MyStack<E>{
             size--;
                 Node temp=stack;
                 stack = null;
-                return temp.data;
+                return (E) temp.data;
             }
 
             Node curr = stack;
@@ -42,7 +42,7 @@ public class MyStack<E>{
             Node temp=curr.next;
             curr.next=null;
             size--;
-            return temp.data;
+            return (E) temp.data;
         }
 
     public E top(){
@@ -50,29 +50,29 @@ public class MyStack<E>{
             return null;
         }
         else if(size==1){
-            return stack.data;
+            return (E) stack.data;
         }
         Node curr=stack;
         while(curr.next!=null){
             curr=curr.next;
         }
-        return curr.data;
+        return (E) curr.data;
     }
     public int size(){
         return size;
     }
     public boolean isEmpty(){
-        if(size==0){
+        if(stack==null){
             return true;
         }
         return false;
     }
-            private class Node
+            private class Node<E>
         {
-            private int data;  //data field
-            private MyStack next; //link field
+            private E data;  //data field
+            private Node next; //link field
 
-            public Node(int item) //constructor method
+            public Node(E item) //constructor method
             {
                 data = item;
                 next = null;
