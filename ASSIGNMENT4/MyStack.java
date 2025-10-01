@@ -15,61 +15,37 @@ public class MyStack<E>{
     }
     public void push(E data){
         //adds not to end of stack
-        if(size==0){
-            stack=new Node(data);
-            size++;
-            return;
-        }
-        else{
-            Node temp = stack;
-            while (temp.next != null)
-            {
-                temp=temp.next;
-            }
-
-            temp.next = new Node(data);
-            size++;
-        }
+        // use "head" of list as the top of stack for O(1) pop, push, and top
+        Node<E> newNode = new Node(data);
+        newNode.next=stack;
+        stack=newNode;
+        size++;
     }
-    public E pop(){
-        //removes and returns last value of stack
-        if (size==0){
+    public E pop() {
+        //removes and returns top value of stack
+        if (size == 0) {
             return null;
         }
-        if (size==1){
-            size--;
-                Node<E> temp=stack;
-                stack = null;
-                return  temp.data;
-            }
-            Node<E> curr = stack;
-            while (curr.next.next != null) {
-                curr = curr.next;
-            }//go to second to last node
-            Node<E> temp=curr.next;
-            curr.next=null;
-            size--;
-            return temp.data;
-        }
+        E val =stack.data;
+        stack=stack.next;
+        size--;
+        return val;
+    }
 
     public E top(){
         //returns top element of stack
-        if (size==0){
+        if(size==0){
             return null;
         }
-        else if(size==1){
-            return stack.data;
-        }
-        Node<E> curr=stack;
-        while(curr.next!=null){
-            curr=curr.next;
-        }
-        return curr.data;
+        //return first node
+        return stack.data;
     }
     public int size(){
+        //returns size of stack
         return size;
     }
     public boolean isEmpty(){
+        //checks if stack is empty
         if(stack==null){
             return true;
         }

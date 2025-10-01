@@ -2,13 +2,14 @@ package ASSIGNMENT4;
 
 import java.util.*;
 public class ReverseString {
+    //reverses sentence
     public static String reverseString(String s,MyStack stack){
         String[] arr=s.split("\\s");
         String[] temp=new String[arr.length];
         for (int i=0;i<arr.length;i++){
             stack.push(arr[i]);
         }
-        stack.printList();
+        //stack.printList();
         int index=0;
         while (!stack.isEmpty()){
             temp[index]=stack.pop().toString();
@@ -37,11 +38,12 @@ public class ReverseString {
                     s=input.nextLine();
                     break;
                 case 2:
-                    System.out.println("String before being reversed: "+s);
-                    System.out.println("String after being reversed: "+reverseString(s,stack));
+                    System.out.println("Entered string: "+s);
+                    System.out.println("Reversed string: "+reverseString(s,stack));
                     break;
                 case 3:
                     System.out.println("Exiting program...");
+                    running=false;
                     break;
                 default:
                     System.out.println("Enter a valid option!");

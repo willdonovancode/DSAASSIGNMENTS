@@ -47,19 +47,29 @@ public class TestMyStack {
                     System.out.println();
                     break;
                 case 2:
-                    System.out.println("Removing from top of stack...");
-                    System.out.print("Stack content before removing last element is: ");
-                    stack.printList();
-                    System.out.println();
-                    //System.out.println(stack.pop());
-                    stack.pop();
-                    System.out.print("Stack content after removing last element is: ");
-                    stack.printList();
-                    System.out.println("");
+
+                    if (stack.isEmpty()){
+                        System.out.println("Stack is empty.");
+                    }
+                    else{
+                        System.out.println("Removing from top of stack...");
+                        System.out.print("Stack content before removing top element is: ");
+                        stack.printList();
+                        System.out.println();
+                        stack.pop();
+                        System.out.print("Stack content after removing top element is: ");
+                        stack.printList();
+                        System.out.println("");
+                    }
                     break;
                 case 3:
-                    System.out.print("Retrieving last element from stack: ");
-                    System.out.println(stack.top());
+                    if (stack.isEmpty()){
+                        System.out.println("Stack is empty.");
+                    }
+                    else{
+                        System.out.print("Retrieving last element from stack: ");
+                        System.out.println(stack.top());
+                    }
                     break;
                 case 4:
                     if (stack.isEmpty()){
@@ -79,12 +89,18 @@ public class TestMyStack {
                     }
                     break;
                 case 6:
-                    System.out.println("Printing stack...");
-                    stack.printList();
-                    System.out.println();
+                    if (stack.isEmpty()){
+                        System.out.println("Stack is empty.");
+                    }
+                    else{
+                        System.out.println("Printing stack...");
+                        stack.printList();
+                        System.out.println();
+                    }
                     break;
                 case 7:
                     System.out.println("Exiting program...");
+                    running=false;
                     break;
                 default:
                     System.out.println("Enter a valid number please!");
